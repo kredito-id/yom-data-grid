@@ -125,7 +125,7 @@ function render($data, $opt) {
     } else if (type == "date" || type == "datetime") {
         _$out_ += '<div class="form-group"><div class="datetimepicker-component input-group date date-from" data-date="' + $encodeHtml(filterCriteria.fromDisplay || "") + '" data-date-format="' + $encodeHtml(type == "datetime" ? filterOption.showSeconds ? datetimeWithSeconds : datetimeFormat : dateFormat) + '" data-value="' + $encodeHtml(filterCriteria.fromValue || "") + '"><input class="form-control" type="text" name="fromDate" value="' + $encodeHtml(filterCriteria.fromDisplay || "") + '" placeholder="' + i18n.start + '" readonly /><div class="input-group-addon"><i class="fa fa-calendar" /></div></div></div><div class="form-group"><div class="datetimepicker-component input-group date date-to" data-date="' + $encodeHtml(filterCriteria.toDisplay || "") + '" data-date-format="' + $encodeHtml(type == "datetime" ? filterOption.showSeconds ? datetimeWithSeconds : datetimeFormat : dateFormat) + '" data-value="' + $encodeHtml(filterCriteria.toValue || "") + '"><input class="form-control" type="text" name="toDate" value="' + $encodeHtml(filterCriteria.toDisplay || "") + '" placeholder="' + i18n.end + '" readonly /><div class="input-group-addon"><i class="fa fa-calendar" /></div></div></div>';
     } else {
-        _$out_ += '<div class="form-group"><input name="value" type="text" value="' + $encodeHtml(filterCriteria.value || "") + '" class="form-control" /></div>';
+        _$out_ += '<div class="form-group"><input name="value" type="text" value="' + $encodeHtml(filterCriteria.value || "") + '" class="form-control" maxlength="' + $encodeHtml(filterOption.maxLength || "") + '" /></div>';
     }
     _$out_ += "</div>";
     if (filterOption.enableEmpty) {
