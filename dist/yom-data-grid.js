@@ -3530,6 +3530,10 @@
 											date.setHours(0);
 											date.setMinutes(0);
 										}
+										if (type == "month") {
+											date.setDate(1);
+											date.setHours(0, 0, 0);
+										}
 										if (!filterOption.showSeconds) {
 											date.setSeconds(0);
 										}
@@ -3550,6 +3554,12 @@
 										if (type == "date") {
 											date.setHours(23);
 											date.setMinutes(59);
+										}
+										if (type == "month") {
+											var month = date.getMonth();
+											date.setMonth(month + 1);
+											date.setDate(0);
+											date.setHours(23, 59, 59);
 										}
 										if (!filterOption.showSeconds) {
 											date.setSeconds(59);
